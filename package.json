@@ -1,0 +1,25 @@
+{
+  "name": "wch-ide",
+  "main": "lib/index",
+  "version": "0.0.1",
+  "repository": "https://github.com/aleclarson/wch-ide",
+  "license": "MIT",
+  "dependencies": {
+    "wch": "^0.1.2"
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "consumedServices": {
+    "package-live-reload": {
+      "versions": {
+        "^1.0.0": "_livereload"
+      }
+    },
+    "linter-indie": {
+      "versions": {
+        "^2.0.0": "_linter"
+      }
+    }
+  }
+}
