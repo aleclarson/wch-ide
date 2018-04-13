@@ -28,13 +28,27 @@ events =
         position: event.location
     ]
 
+hasWchPlugin = (deps) ->
+  return false unless deps
+  for name of deps
+    return true if /^wch-/.test name
+  return false
+
 module.exports =
 
   activate: safe ->
     subs = new CompositeDisposable
+
     for id, fn of events
       subs.add wch.on id, fn
-    return
+
+    # Auto-watch projects that depend on wch plugins.
+    subs.add atom.project.onDidChangePaths (projectPaths) ->
+      for projectPath in projectPaths
+        packPath = path.join projectPath, 'package.json'
+        continue unless fs.isFile packPath
+        try deps = JSON.parse(fs.readFile packPath).devDependencies
+        wch projectPath if hasWchPlugin deps
 
   deactivate: safe ->
     subs.dispose()
