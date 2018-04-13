@@ -28,7 +28,7 @@ events =
       excerpt: event.message
       location:
         file: event.file
-        position: event.location
+        position: event.location or [[0, 0], [0, 0]]
     ]
 
 hasWchPlugin = (deps) ->
