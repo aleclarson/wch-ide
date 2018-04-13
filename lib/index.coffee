@@ -19,6 +19,9 @@ events =
   'file:build': (event) ->
     linter.setMessages event.file, none
 
+  'file:delete': (event) ->
+    linter.setMessages event.file, none
+
   'file:error': (event) ->
     linter.setMessages event.file, [
       severity: 'error'
