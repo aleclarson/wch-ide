@@ -3,8 +3,6 @@ path = require 'path'
 wch = require 'wch'
 fs = require 'fsx'
 
-{workspace} = atom
-
 subs = null
 linter = null
 
