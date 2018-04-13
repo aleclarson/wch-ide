@@ -1,7 +1,7 @@
 {
   "name": "wch-ide",
   "main": "lib/index",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": "https://github.com/aleclarson/wch-ide",
   "license": "MIT",
   "dependencies": {
