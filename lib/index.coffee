@@ -16,10 +16,10 @@ safe = (fn) -> ->
 none = []
 events =
 
-  'compile': (event) ->
+  'file:build': (event) ->
     linter.setMessages event.file, none
 
-  'compile:error': (event) ->
+  'file:error': (event) ->
     linter.setMessages event.file, [
       severity: 'error'
       excerpt: event.message
